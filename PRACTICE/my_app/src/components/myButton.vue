@@ -1,15 +1,19 @@
+<template>
+<button id="show" @click="handleClick">{{text}}</button>
+</template>
+
 <script setup>
 import {ref} from 'vue'
 const text=ref('點我')
+function handleClick(){
+    alert('點擊成功')
+}
 </script>
-
-<template>
-<button id="show">{{text}}</button>
-</template>
 
 <style scoped>
 #show{
     background-color:#FFF7E9 ;
-    color: tomato;
+    color: #1A394A;
+    border: 5px solid tomato;
 }
 </style>
