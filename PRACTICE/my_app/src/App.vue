@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import myButton from './components/myButton.vue';
+import LifeNote from './components/LifeNote.vue';
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import myButton from './components/myButton.vue';
   </div>
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <myButton />
+  <LifeNote />
 </template>
 
 <style scoped>
