@@ -1,5 +1,9 @@
 <script setup>
-import { ref } from 'vue'
+import { ref,reactive } from 'vue'
+
+const money=ref(0)
+money.value=32000
+console.log(money.value);
 
 defineProps({
   msg: String,
@@ -22,19 +26,20 @@ const count = ref(0)
   <p>
     Check out
     <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
+      >create-vue
+    </a>, the official Vue + Vite starter
   </p>
   <p>
     Learn more about IDE Support for Vue in the
     <a
       href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support"
       target="_blank"
-      >Vue Docs Scaling up Guide</a
-    >.
+      >Vue Docs Scaling up Guide
+    </a>.
+    </p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
-</template>
+  </template>
 
 <style scoped>
 .read-the-docs {
