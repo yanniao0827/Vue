@@ -36,7 +36,8 @@ onUnmounted(()=>{
 <template>
 <h1>筆記</h1>
 <input type="text" :placeholder="text" v-model="note">
-<p :style="testStyle">Note:{{ note }}</p>
+<p :style="testStyle">Note長度:{{ note.length }}</p>
+<img v-show="note.length>10" src="/img6.jpg" :alt="note">
 <p :class="classStyle">Calculate one: {{ 2+4 }}</p>
 <p>Calculate two: {{ a*b }}</p>
 <p v-if="isFont30 ==true">font30</p>
