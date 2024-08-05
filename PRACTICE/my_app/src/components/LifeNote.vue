@@ -9,6 +9,11 @@ onUpdated(()=>{
     updateLocalStorage();
     console.log('筆記已更新');
 })
+// 確保關閉前也有更新LocalStorage
+onUnmounted(()=>{
+    updateLocalStorage();
+    console.log('筆記已刪除');
+})
 </script>
 
 // 用{{}}包起來是vue的插值語法
