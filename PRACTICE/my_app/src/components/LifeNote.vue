@@ -2,9 +2,13 @@
 import { ref,onUpdated,onUnmounted } from 'vue';
 const note=ref('')
 const updateLocalStorage = () => {
-    // 我希望可以存取我即時輸入的筆記
+    // 我希望可以存取我即時輸入的筆記到localStorage
     localStorage.setItem('userNote', note.value);
 }
+onUpdated(()=>{
+    updateLocalStorage();
+    console.log('筆記已更新');
+})
 </script>
 
 // 用{{}}包起來是vue的插值語法
