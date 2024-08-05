@@ -35,7 +35,7 @@ onUnmounted(()=>{
 <img v-show="note.length>10" src="/img6.jpg" :alt="note">
 <p :class="note">Calculate one: {{ 2+4 }}</p>
 <p>Calculate two: {{ a*b }}</p>
-<p v-if="isFont30 ==true">font30</p>
+<p v-if="note === 'font30'">font30</p>
 <p v-else>font10</p>
 </template>
 
