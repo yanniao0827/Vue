@@ -14,6 +14,10 @@ function handleClick(){
 #show{
     background-color:#FFF7E9 ;
     color: #1A394A;
-    border: 5px solid tomato;
+}
+
+#show:hover{
+    background-color:tomato ;
+    color: #FFF7E9 ;
 }
 </style>
