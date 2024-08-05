@@ -4,10 +4,10 @@ import { ref,reactive } from 'vue'
 const money=ref(0)
 money.value=32000
 const fruits=['apple','banana','orange']
-const user={
+const user=reactive({
   name:'Lea',
   age:23
-}
+})
 console.log(money.value);
 
 defineProps({
