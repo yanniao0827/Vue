@@ -14,11 +14,6 @@ const updateLocalStorage = () => {
     localStorage.setItem('userNote', note.value);
 }
 onUpdated(()=>{
-    if(note=='font30'){
-        isFont30=true
-    }else{
-        isFont30=false
-    }
     updateLocalStorage();
     console.log('isFont30',isFont30);
 })
@@ -38,7 +33,7 @@ onUnmounted(()=>{
 <input type="text" :placeholder="text" v-model="note">
 <p :style="testStyle">Note長度:{{ note.length }}</p>
 <img v-show="note.length>10" src="/img6.jpg" :alt="note">
-<p :class="classStyle">Calculate one: {{ 2+4 }}</p>
+<p :class="note">Calculate one: {{ 2+4 }}</p>
 <p>Calculate two: {{ a*b }}</p>
 <p v-if="isFont30 ==true">font30</p>
 <p v-else>font10</p>
