@@ -1,5 +1,5 @@
 <script setup>
-import { ref,onUpdated,onUnmounted } from 'vue';
+import { ref,reactive,onUpdated,onUnmounted } from 'vue';
 const note=ref('')
 const text=ref('輸入樣式')
 const a=ref(30)
@@ -7,6 +7,7 @@ const b=ref(40)
 // 寫已定義好的樣式名稱
 let classStyle=ref('font50')
 let isFont30=ref(true)
+const livers=reactive(['Shu','Alban','Doppi','Sonny'])
 
 const testStyle=ref({color:'tomato', fontSize:'25px', fontWeight:'bold'})
 const updateLocalStorage = () => {
@@ -28,6 +29,7 @@ onUnmounted(()=>{
 // v-model為雙向綁定的語法，在這裡雙向綁訂了input以及{{note}}，此時在input輸入文字會值時顯示在p標籤裡面
 // v-bind為樣式繫節語法，:style="(自訂的樣式名稱)"就可以代入自訂樣式，v-bind可以省略
 // v-if、v-else為條件渲染語法，當條件為true時才會顯示，因為我isFont30已經設定成true，因此顯示font30
+// v-for為迴圈渲染語法，name in livers中，name可以自訂，我也可以用liver in livers，livers是我上面設定的固定名稱，不可以更改
 <template>
 <h1>筆記</h1>
 <input type="text" :placeholder="text" v-model="note">
@@ -37,6 +39,13 @@ onUnmounted(()=>{
 <p>Calculate two: {{ a*b }}</p>
 <p v-if="note === 'font30'">font30</p>
 <p v-else>font10</p>
+<ul id="liverList">
+    <li v-for="name in livers">{{ name }}</li>
+</ul>
+<ul id="liverList2">
+    <li v-for="(liver,index) in livers">{{ index }}-{{ liver }}</li>
+</ul>
+
 </template>
 
 
