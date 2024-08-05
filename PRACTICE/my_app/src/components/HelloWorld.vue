@@ -21,6 +21,7 @@ const count = ref(0)
   <h1>{{ money }}</h1>
   <h2>{{fruits[1]}}</h2>
   <h3>{{ user.name }}{{ user.age }}歲</h3>
+  <img src="../assets/img1.jpg">
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
