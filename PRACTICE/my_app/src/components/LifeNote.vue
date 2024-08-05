@@ -23,6 +23,9 @@ onUnmounted(()=>{
     updateLocalStorage();
     console.log('筆記已刪除');
 })
+function showLiver(liver){
+    alert('你的推是'+liver)
+}
 </script>
 
 // 用{{}}包起來是vue的插值語法
@@ -40,11 +43,12 @@ onUnmounted(()=>{
 <p v-if="note === 'font30'">font30</p>
 <p v-else>font10</p>
 <ul id="liverList">
-    <li v-for="name in livers">{{ name }}</li>
+    <li v-for="name in livers" @click="showLiver(name)">{{ name }}</li>
 </ul>
 <ul id="liverList2">
-    <li v-for="(liver,index) in livers">{{ index }}-{{ liver }}</li>
+    <li v-for="(liver,index) in livers" @click="showLiver(liver,index)">{{ index+1 }}-{{ liver }}</li>
 </ul>
+
 
 </template>
 
@@ -63,5 +67,9 @@ input{
 .font50{
     font-size: 50px;
     color:grey
+}
+li:hover{
+    color: aqua;
+    font-size: 40px;
 }
 </style>
