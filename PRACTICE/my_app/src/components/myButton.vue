@@ -9,7 +9,7 @@ const text=ref('點我')
 
 <style scoped>
 #show{
-    background-color: #1A394A;
-    color: #FFF7E9;
+    background-color:#FFF7E9 ;
+    color: tomato;
 }
 </style>
