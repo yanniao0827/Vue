@@ -7,14 +7,17 @@
 </head>
 <body>
     <div id="app">
-        {{ message }}
+        {{ message }},
+        {{ name }}
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         const app=Vue.createApp({
             data(){
                 return{
-                    message:'Vue課程'
+                    message:'Vue課程',
+                    // 新增一個值，網頁不需要重整
+                    name:'Lea'
                 }
             }
         })
