@@ -4,6 +4,8 @@ const note=ref('')
 const a=ref(30)
 const b=ref(40)
 
+let classStyle=ref('font50')
+
 const testStyle=ref({color:'tomato', fontSize:'25px', fontWeight:'bold'})
 const updateLocalStorage = () => {
     // 我希望可以存取我即時輸入的筆記到localStorage
@@ -27,7 +29,7 @@ onUnmounted(()=>{
 <h1>筆記</h1>
 <input type="text" placeholder="輸入筆記" v-model="note">
 <p :style="testStyle">Note:{{ note }}</p>
-<p>Calculate one: {{ 2+4 }}</p>
+<p :class="note">Calculate one: {{ 2+4 }}</p>
 <p>Calculate two: {{ a*b }}</p>
 </template>
 
@@ -39,5 +41,12 @@ input{
     border-radius: 40px;
     padding-left: 15px;
     border: 1px solid white
+}
+.font15{
+    font-size: 15px
+}
+.font50{
+    font-size: 50px;
+    color:grey
 }
 </style>
