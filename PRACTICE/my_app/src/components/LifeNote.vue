@@ -8,6 +8,7 @@ const b=ref(40)
 let classStyle=ref('font50')
 let isFont30=ref(true)
 const livers=reactive(['Shu','Alban','Doppi','Sonny'])
+const gender=ref('male')
 
 const testStyle=ref({color:'tomato', fontSize:'25px', fontWeight:'bold'})
 const updateLocalStorage = () => {
@@ -26,6 +27,9 @@ onUnmounted(()=>{
 function showLiver(liver){
     alert('你的推是'+liver)
 }
+function showMsg(msg){
+    alert(msg)
+}
 </script>
 
 // 用{{}}包起來是vue的插值語法
@@ -35,7 +39,7 @@ function showLiver(liver){
 // v-for為迴圈渲染語法，name in livers中，name可以自訂，我也可以用liver in livers，livers是我上面設定的固定名稱，不可以更改
 <template>
 <h1>筆記</h1>
-<input type="text" :placeholder="text" v-model="note">
+<input type="text" :placeholder="text" v-model="note" @change="showMsg(note)">
 <p :style="testStyle">Note長度:{{ note.length }}</p>
 <img v-show="note.length>10" src="/img6.jpg" :alt="note">
 <p :class="note">Calculate one: {{ 2+4 }}</p>
@@ -48,7 +52,11 @@ function showLiver(liver){
 <ul id="liverList2">
     <li v-for="(liver,index) in livers" @click="showLiver(liver,index)">{{ index+1 }}-{{ liver }}</li>
 </ul>
-
+<form action="" id="myForm">
+    <select name="" id="">
+        <option v-for="(liver2,index) in livers" :value="liver2" @change="showLiver(liver2,index)">{{ liver2,index }}</option>
+    </select>
+</form>
 
 </template>
 
