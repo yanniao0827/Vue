@@ -1,6 +1,8 @@
 <script setup>
 import { ref,onUpdated,onUnmounted } from 'vue';
 const note=ref('')
+const a=ref(30)
+const b=ref(40)
 const updateLocalStorage = () => {
     // 我希望可以存取我即時輸入的筆記到localStorage
     localStorage.setItem('userNote', note.value);
@@ -22,6 +24,8 @@ onUnmounted(()=>{
 <h1>筆記</h1>
 <input type="text" placeholder="輸入筆記" v-model="note">
 <p>Note:{{ note }}</p>
+<p>Calculate one: {{ 2+4 }}</p>
+<p>Calculate two: {{ a*b }}</p>
 </template>
 
 
