@@ -3,7 +3,7 @@ import { ref,onUpdated,onUnmounted } from 'vue';
 const note=ref('')
 const a=ref(30)
 const b=ref(40)
-
+// 寫已定義好的樣式名稱
 let classStyle=ref('font50')
 
 const testStyle=ref({color:'tomato', fontSize:'25px', fontWeight:'bold'})
@@ -29,7 +29,7 @@ onUnmounted(()=>{
 <h1>筆記</h1>
 <input type="text" placeholder="輸入筆記" v-model="note">
 <p :style="testStyle">Note:{{ note }}</p>
-<p :class="note">Calculate one: {{ 2+4 }}</p>
+<p :class="classStyle">Calculate one: {{ 2+4 }}</p>
 <p>Calculate two: {{ a*b }}</p>
 </template>
 
