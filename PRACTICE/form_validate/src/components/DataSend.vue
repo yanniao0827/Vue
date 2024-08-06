@@ -26,6 +26,7 @@ h2{
     color: tomato;
 }
 input{
+    width: 300px;
     margin-right: 20px;
 }
 </style>

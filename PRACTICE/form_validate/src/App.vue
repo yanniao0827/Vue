@@ -3,9 +3,9 @@ import HelloWorld from './components/HelloWorld.vue'
 import Register from './components/Register.vue';
 import DataSend from './components/DataSend.vue';
 import { ref } from 'vue';
-const appMsg=ref('父組件的預設訊息');
+const appMsg=ref('父組件傳給子組件的預設訊息');
 const money=ref(38000);
-let receiveMessage = ref('預設訊息');
+let receiveMessage = ref('父組件內的預設訊息');
 function updateMessage(newMsg){
   receiveMessage.value = newMsg
 }
