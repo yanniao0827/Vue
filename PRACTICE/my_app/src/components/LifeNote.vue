@@ -8,7 +8,7 @@ const b=ref(40)
 let classStyle=ref('font50')
 let isFont30=ref(true)
 const livers=reactive(['Shu','Alban','Doppi','Sonny'])
-const gender=ref('male')
+const gender=ref('男')
 
 const testStyle=ref({color:'tomato', fontSize:'25px', fontWeight:'bold'})
 const updateLocalStorage = () => {
@@ -54,8 +54,10 @@ function showMsg(msg){
 </ul>
 <form action="" id="myForm">
     <select name="" id="">
-        <option v-for="(liver2,index) in livers" :value="liver2" @change="showLiver(liver2,index)">{{ liver2,index }}</option>
+        <option v-for="(liver1,index) in livers" :value="liver1" @change="showLiver(liver1,index)">{{ liver1,index }}</option>
     </select>
+    <input type="radio" name="gender" v-model="gender" checked>男
+    <input type="radio" name="gender" v-model="gender">女
 </form>
 
 </template>

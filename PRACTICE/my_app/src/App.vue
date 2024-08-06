@@ -16,8 +16,8 @@ import Register from './components/Register.vue';
   </div> -->
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <!-- <myButton /> -->
-  <!-- <LifeNote /> -->
-  <Register />
+  <LifeNote />
+  <!-- <Register /> -->
 </template>
 
 <style scoped>
