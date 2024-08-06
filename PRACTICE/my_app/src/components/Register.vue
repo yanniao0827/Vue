@@ -8,7 +8,7 @@ const error=ref('')
 const errorStyle=ref({color:'red', fontWeight:'bold'});
 const validate=ref(false)
 const checkForm=()=>{
-    if(!name.value && !phone.value && !bday.value ){
+    if(!name.value && !phone.value && !bday.value && !gender.value){
     error.value='請填寫欄位'
     validate.value=false
     }
