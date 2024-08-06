@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import {ref} from 'vue';
+const msg=ref('')
+function shoeMsg(){
+    alert(msg.value)
+}
+</script>
 
 <template>
     <div id="box">
@@ -9,6 +15,7 @@
         <button>Warm Light Gray 1A394A 只有一次</button>
         <button>pink 點擊滾輪</button>
         <button>aqua marine 滾動滾輪</button>
+        <input type="text" v-model="msg" @keydown.enter="shoeMsg">
     </div>
 </template>
 
