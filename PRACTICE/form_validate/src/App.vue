@@ -1,10 +1,14 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import Register from './components/Register.vue';
+import DataSend from './components/DataSend.vue';
 </script>
 
 <template>
-<Register />
+<!-- <Register /> -->
+ <p>子組件傳入:</p>
+ <p>預設訊息</p>
+<DataSend />
 </template>
 
 <style scoped>
@@ -19,5 +23,8 @@ import Register from './components/Register.vue';
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+p{
+  color: blueviolet;
 }
 </style>
