@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import {ref} from 'vue'
+// 這裡的testStore是在stores/testStore中就取好名，不能更改
+import {testStore} from '../stores/testStore';
+const todoStore=testStore();
+console.log(todoStore);
+
+</script>
 
 
 <template>

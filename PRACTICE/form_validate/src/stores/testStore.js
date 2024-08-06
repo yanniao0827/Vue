@@ -6,6 +6,18 @@ import { defineStore} from 'pinia'
 export const testStore= defineStore ("test", {
  state:()=>({
     // 儲存各狀態的變數
+    todos:[
+        {
+            id:1,
+            text:'父子組件練習',
+            isFinished:false
+        },
+        {
+            id:2,
+            text:'pinia練習',
+            isFinished:false
+        }
+    ]
  }),
  getters:{
     // 要被讀取的資料函式
