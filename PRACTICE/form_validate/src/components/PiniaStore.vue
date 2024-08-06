@@ -4,17 +4,20 @@ import {ref} from 'vue'
 import {testStore} from '../stores/testStore';
 // 讓testStore的值可以在這個檔案中被引用
 const todoStore=testStore();
-// console.log(todoStore);
+
 import {storeToRefs} from 'pinia';
 const {finishTodos} = storeToRefs(todoStore);
+
+const{addTodo}=todoStore;
+const newItem=ref('');
 
 </script>
 
 <template>
     <h1>Pinia狀態管理</h1>
     <div class="container">
-        <input type="text">
-        <button>新增待辦</button>
+        <input type="text" v-model="newItem">
+        <button @click="addTodo(newItem)">新增待辦</button>
         <ul class="list">
             <li class="item" v-for="item in todoStore.todos">{{ item.text }}</li>
         </ul>

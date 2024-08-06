@@ -30,12 +30,20 @@ export const testStore= defineStore ("test", {
     ]
  }),
  getters:{
-    // 要被讀取的資料函式
+    // 要被讀取的資料函式，可以幫忙把資料分類
     finishTodos(state){
         return state.todos.filter(todo=>todo.isFinished)
     }
  },
  actions:{
-    // 變更資料狀態的函式區
+    // 變更、更新資料狀態的函式區
+    addTodo(text){
+        if(text.length==0) return
+        this.todos.push({
+            id:Math.floor(Math.random()*100000),
+            text:text,
+            isFinished:false
+        })
+    }
  }
 })
