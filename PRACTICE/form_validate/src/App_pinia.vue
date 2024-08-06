@@ -7,10 +7,10 @@ const todoStore = testStore();
 
 <template>
 <PiniaStore />
-<h3>從父組件找pinia資料</h3>
+<!-- <h3>從父組件呼叫pinia資料</h3>
 <ul class="list">
   <li v-for="item in todoStore.todos">{{ item.text }}</li>
-</ul>
+</ul> -->
 </template>
 
 <style scoped>
