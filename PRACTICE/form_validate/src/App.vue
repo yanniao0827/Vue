@@ -3,15 +3,19 @@ import HelloWorld from './components/HelloWorld.vue'
 import Register from './components/Register.vue';
 import DataSend from './components/DataSend.vue';
 import { ref } from 'vue';
-const appMsg=ref('來自app父組件的訊息');
+const appMsg=ref('父組件的預設訊息');
 const money=ref(38000);
+let receiveMessage = ref('預設訊息');
+function updateMessage(newMsg){
+  receiveMessage.value = newMsg
+}
 </script>
 
 <template>
 <!-- <Register /> -->
  <p>子組件傳入:</p>
- <p>預設訊息</p>
-<DataSend :appMsg="appMsg" :money="money"/>
+ <p>{{ receiveMessage }}</p>
+<DataSend :appMsg="appMsg" :money="money" @update:msg="updateMessage"/>
 </template>
 
 <style scoped>
