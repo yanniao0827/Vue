@@ -8,7 +8,7 @@ const todoStore=testStore();
 import {storeToRefs} from 'pinia';
 const {finishTodos} = storeToRefs(todoStore);
 
-const{addTodo}=todoStore;
+const{addTodo,toggleTodo}=todoStore;
 const newItem=ref('');
 
 </script>
@@ -18,12 +18,14 @@ const newItem=ref('');
     <div class="container">
         <input type="text" v-model="newItem">
         <button @click="addTodo(newItem)">新增待辦</button>
+        <p>代辦事項</p>
         <ul class="list">
-            <li class="item" v-for="item in todoStore.todos">{{ item.text }}</li>
+            <li class="item" v-for="item in todoStore.todos.filter(item => !item.isFinished)" @click="toggleTodo(item.id)">{{ item.text }}</li>
         </ul>
         <p>已完成</p>
         <ul class="list">
-            <li v-for="finish in finishTodos">{{ finish.text }}</li>
+            <li class="item" v-for="item in finishTodos" >{{ item.text }}</li>
+            <!-- <div class="toggle" v-if="todoStore.isFinished" @click="todoStore.toggleTodo(todoStore.id)"></div> -->
         </ul>
     </div>
 </template>
@@ -35,5 +37,9 @@ input{
 button{
     margin-top: 20px;
     margin-bottom: 20px;
+}
+li:hover{
+    font-size: 25px;
+    color: orange;
 }
 </style>

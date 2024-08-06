@@ -15,7 +15,7 @@ export const testStore= defineStore ("test", {
         {
             id:2,
             text:'pinia練習',
-            isFinished:true
+            isFinished:false
         },
         {
             id:3,
@@ -25,7 +25,7 @@ export const testStore= defineStore ("test", {
         {
             id:4,
             text:'作品集',
-            isFinished:true
+            isFinished:false
         }
     ]
  }),
@@ -44,6 +44,10 @@ export const testStore= defineStore ("test", {
             text:text,
             isFinished:false
         })
+    },
+    toggleTodo(id){
+        const index =this.todos.findIndex((todo) => todo.id === id)
+        this.todos[index].isFinished = !this.todos[index].isFinished
     }
  }
 })

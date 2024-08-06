@@ -13,14 +13,19 @@
      <main>
       <input type="text" v-model="newTodo"/>&nbsp;
       <button @click="addTodo(newTodo)">Add</button>
+
+
       <div v-for="todo in todos">
         <div class="items">
           <div class="toggle" v-if="todo.isFinished" @click="todoStore.toggleTodo(todo.id)"><i class="fa-solid fa-2x fa-square-check"></i>&nbsp;</div>
+
           <div class="toggle" v-else @click="todoStore.toggleTodo(todo.id)"><i class="fa-regular fa-2x fa-square"></i>&nbsp;</div>
+          
           <h3 :style="todo.isFinished && { textDecoration: 'line-through' }">{{ todo.text }}</h3>
-        </div>
-        
+        </div>  
       </div>
+
+
       <div>
           <h3>已完成待辦清單:</h3>
           <ul class="finished">
