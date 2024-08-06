@@ -3,6 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import myButton from './components/myButton.vue';
 import LifeNote from './components/LifeNote.vue';
 import Register from './components/Register.vue';
+import changeColor from './components/changeColor.vue';
 </script>
 
 <template>
@@ -16,8 +17,9 @@ import Register from './components/Register.vue';
   </div> -->
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <!-- <myButton /> -->
-  <LifeNote />
+  <!-- <LifeNote /> -->
   <!-- <Register /> -->
+  <changeColor />
 </template>
 
 <style scoped>
