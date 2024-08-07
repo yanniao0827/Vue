@@ -8,7 +8,8 @@ const {finishNotes}=storeToRefs(todoStore);
 
 <template>
     <h2 class="mb-4">筆記列表</h2>
-    <button class="btn btn-dark mb-4">新增</button>
+    <router-link to="/add"><button class="btn btn-dark mb-4">新增</button></router-link>
+
     <div class="important mb-4">
         <h4><i class="fa-solid fa-bookmark me-2 text-danger"></i>重要筆記</h4>
         <ul class="list-group">

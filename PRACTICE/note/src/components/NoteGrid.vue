@@ -43,6 +43,8 @@ const {pinNote}=storeToRefs(noteStore);
     right: 0;
     top:0;
     margin: 0.5em;
+    color: tomato;
+    font-weight: bold;
 }
 
 </style>
