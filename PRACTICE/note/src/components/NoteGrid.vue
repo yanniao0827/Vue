@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-    <h1>筆記本</h1>
+    <h2>筆記本</h2>
 </template>
 
 <style scoped></style>
