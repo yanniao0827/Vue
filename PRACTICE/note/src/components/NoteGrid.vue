@@ -11,7 +11,8 @@ const {pinNote}=storeToRefs(noteStore);
     <div class="container">
         <div class="row">
             <div v-for="note in todoStore.notes" :key="note.id" class="col-3 mb-5">
-                <div class="card">
+                <router-link :to="{ name: 'edit', params: { id: note.id } }" class="text-dark">
+                    <div class="card">
                     <div class="card-body">
                     <i v-show="note.isPin" class="fa-solid fa-check"></i>
                     <h5 class="card-title">{{ note.title }}</h5>
@@ -19,6 +20,8 @@ const {pinNote}=storeToRefs(noteStore);
                     </p>
                     </div>
                 </div>
+                </router-link>
+
             </div>
         </div>
     </div>
@@ -46,5 +49,6 @@ const {pinNote}=storeToRefs(noteStore);
     color: tomato;
     font-weight: bold;
 }
+
 
 </style>

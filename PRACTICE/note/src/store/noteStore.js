@@ -29,7 +29,7 @@ export const noteStore=defineStore("notes",{
                    isPin:false
                },
                {
-                id:4,
+                id:5,
                 title:'薩爾達攻略',
                 content:'找到神廟',
                 isPin:false
