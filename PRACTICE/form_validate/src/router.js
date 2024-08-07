@@ -4,6 +4,7 @@ import Register from './components/Register.vue'
 import DataSend from './components/DataSend.vue'
 import Axios from './components/Axios.vue'
 
+// path為網址列
 const routes = [
     {path:'/pinia',name:'pinia',component: PiniaStore},
     {path:'/register',name:'register',component: Register},

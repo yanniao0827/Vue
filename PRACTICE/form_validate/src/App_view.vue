@@ -23,7 +23,7 @@ const todoStore = testStore();
     </router-link>
   </li>
   <li>
-    <router-link to="/axios">
+    <router-link :to="{name:'axios'}">
       Axios載入資料
     </router-link>
   </li>
