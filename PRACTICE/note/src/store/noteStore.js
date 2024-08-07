@@ -44,9 +44,9 @@ export const noteStore=defineStore("notes",{
         },
         actions:{
            // 變更、更新資料狀態的函式區
-           addNote(text,content){
-               if(text.length==0) return
-               this.note.push({
+           addNote(title,content){
+               if(title.length==0) return
+               this.notes.push({
                    id:Math.floor(Math.random()*100000),
                    title:title,
                    content:content,
