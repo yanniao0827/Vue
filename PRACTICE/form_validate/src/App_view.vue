@@ -22,6 +22,11 @@ const todoStore = testStore();
       父子組件傳值
     </router-link>
   </li>
+  <li>
+    <router-link to="/axios">
+      Axios載入資料
+    </router-link>
+  </li>
 </ul>
 
 <div class="container">
