@@ -21,7 +21,7 @@ function sendMsg(){
     <button type="button" @click="sendMsg">送訊息給父組件</button>
 </template>
 
-<style>
+<style scoped>
 h2{
     color: tomato;
 }
