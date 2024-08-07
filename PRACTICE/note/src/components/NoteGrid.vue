@@ -1,41 +1,21 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import {noteStore} from '../store/noteStore';
+import {storeToRefs} from 'pinia';
+const todoStore = noteStore();
+const {pinNote}=storeToRefs(noteStore);
+</script>
 
 <template>
     <h2 class="mb-4">筆記本</h2>
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div v-for="note in todoStore.notes" :key="note.id" class="col-3 mb-5">
                 <div class="card">
                     <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card" >
-                    <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                    <i v-show="note.isPin" class="fa-solid fa-check"></i>
+                    <h5 class="card-title">{{ note.title }}</h5>
+                    <p class="card-text">{{ note.content }}
                     </p>
                     </div>
                 </div>
@@ -56,6 +36,13 @@
     transform: scale(1.1);
     background-color: #FFF7E9;
     box-shadow: 3px 3px 15px #8c8984;
+}
+
+.fa-solid{
+    position: absolute;
+    right: 0;
+    top:0;
+    margin: 0.5em;
 }
 
 </style>

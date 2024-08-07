@@ -14,7 +14,7 @@ export const noteStore=defineStore("notes",{
                    id:2,
                    title:'面試',
                    content:'永豐面談',
-                   isPin:false
+                   isPin:true
                },
                {
                    id:3,
@@ -27,7 +27,13 @@ export const noteStore=defineStore("notes",{
                    title:'薩爾達',
                    content:'離開台地',
                    isPin:false
-               }
+               },
+               {
+                id:4,
+                title:'薩爾達攻略',
+                content:'找到神廟',
+                isPin:false
+            }
            ]
         }),
         getters:{
