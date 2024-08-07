@@ -4,6 +4,7 @@ import {noteStore} from '../store/noteStore';
 import {storeToRefs} from 'pinia';
 const todoStore = noteStore();
 const {finishNotes}=storeToRefs(todoStore);
+const {markPin}=todoStore;
 </script>
 
 <template>
@@ -18,7 +19,7 @@ const {finishNotes}=storeToRefs(todoStore);
             <li v-for="pin in finishNotes" class="list-group-item d-flex justify-content-between">
                 {{pin.title}}
             <div class="icon-group ">
-                <i class="fa-solid fa-heart me-3 text-danger"></i>
+                <i class="fa-solid fa-heart me-3 text-danger" @click="markPin(pin.id)"></i>
                 <i class="fa-solid fa-trash"></i>
             </div>
             </li>
@@ -30,7 +31,7 @@ const {finishNotes}=storeToRefs(todoStore);
         <ul class="list-group">
             <li v-for="note in todoStore.notes" class="list-group-item d-flex justify-content-between">{{ note.title }} 
             <div class="icon-group ">
-                <i class="fa-regular fa-heart me-3 text-danger"></i>
+                <i class="fa-solid fa-heart me-3" @click="markPin(note.id)"></i>
                 <i class="fa-solid fa-trash"></i>
             </div>
             </li>
@@ -38,4 +39,8 @@ const {finishNotes}=storeToRefs(todoStore);
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.fa-heart:hover{
+color: tomato;
+}
+</style>

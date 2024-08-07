@@ -53,5 +53,11 @@ export const noteStore=defineStore("notes",{
                    isPin:false
                })
            },
+           markPin(id){
+               const index=this.notes.findIndex(note=>note.id===id)
+               if(index!==-1){
+                this.notes[index].isPin=!this.notes[index].isPin
+            }
+           }
         }
        })
